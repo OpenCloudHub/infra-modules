@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  terraform-checks:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Format
+        run: terraform fmt -check -recursive
+
+      - name: Find and Validate Modules
+        run: |
+          for dir in $(find . -name "*.tf" -exec dirname {} \; | sort -u); do
+            echo "Validating $dir"
+            cd "$dir"
+            terraform init -backend=false
+            terraform validate
+            cd - > /dev/null
+          done
