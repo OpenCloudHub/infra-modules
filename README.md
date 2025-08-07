@@ -3,8 +3,13 @@
 <!-- PROJECT LOGO & TITLE -->
 
 <div align="center">
-  <a href="https://github.com/opencloudhub/infra-modules">
-    <img src="https://raw.githubusercontent.com/opencloudhub/.github/main/references/brand/assets/logos/primary-logo-light-background.svg" alt="OpenCloudHub Logo" width="100%" style="max-width:320px;" height="160">
+  <a href="https://github.com/opencloudhub">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/opencloudhub/.github/main/assets/brand/assets/logos/primary-logo-light.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/opencloudhub/.github/main/assets/brand/assets/logos/primary-logo-dark.svg">
+    <!-- Fallback -->
+    <img alt="OpenCloudHub Logo" src="https://raw.githubusercontent.com/opencloudhub/.github/main/assets/brand/assets/logos/primary-logo-dark.svg" style="max-width:700px; max-height:175px;">
+  </picture>
   </a>
 
 <h1 align="center">Infrastructure Modules</h1>
